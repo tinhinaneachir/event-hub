@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'], // ← attention au "styleUrls"
 })
 export class HomeComponent {
   serachTerm = '';
@@ -31,11 +32,11 @@ export class HomeComponent {
 
   filteredEvents() {
     return this.events.filter((e) =>
-      e.title.toLocaleLowerCase().includes(this.serachTerm.toLocaleLowerCase())
+      e.title.toLowerCase().includes(this.serachTerm.toLowerCase())
     );
   }
 
   viewEvent(event: any) {
-    alert('Voir détails de : ${event.title}');
+    alert(`Voir détails de : ${event.title}`);
   }
 }
