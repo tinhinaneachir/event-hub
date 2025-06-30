@@ -5,9 +5,11 @@ import { provideRouter } from '@angular/router';
 import { HomeComponent } from './app/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideRouter([{ path: '', component: HomeComponent }]),
     importProvidersFrom(
       FormsModule,

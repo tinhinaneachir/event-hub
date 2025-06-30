@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'], // ✅ avec un "s"
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'event-hub';
